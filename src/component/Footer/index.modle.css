@@ -1,0 +1,33 @@
+.Fooder {
+  display: flex;
+  background-color: pink;
+  justify-content:space-around;
+  height: 40px;
+ 
+}
+
+.home {
+  
+  
+  height: 40px;
+  text-align: center;
+  
+}
+
+.mypage {
+
+  
+  height: 40px;
+  text-align: center;
+}
+
+.CirclePlus {
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.UnderRound {
+  margin-top: 0.5rem;
+
+  color: white;
+}
