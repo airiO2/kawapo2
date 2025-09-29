@@ -1,0 +1,44 @@
+.file::file-selector-button {
+  background-color: white;
+  font-size: 0rem;
+  width: 10rem;
+  height: 10rem;
+  border: none;
+  opacity: 0;
+}
+
+.file {
+    position: absolute;
+  font-size: 0rem;
+  max-width: 430px;
+  width: 100%;
+  height: 10rem;
+  
+  border: black 0.1rem dashed;
+  z-index: 100;
+}
+
+.filemix {
+  position: relative;
+  max-width: 430px;
+  width: 60%;
+  height: 10rem;
+  background-color: white;
+}
+
+.FileOutput {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: pink;
+}
+
+.Image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  z-index: 1;
+  object-fit: contain;
+}
