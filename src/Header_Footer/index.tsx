@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./index.module.css"
 import Header from "../Header";
-import Fooder from "../Fooder";
+import Fooder from "@/component/Footer";
 
 interface AppFrameProps{
     children: React.ReactNode;
