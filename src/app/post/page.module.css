@@ -1,0 +1,37 @@
+.maintext{
+
+    width: 60%;
+    height: 100px;
+    
+
+}
+
+.hashtag{
+    width: 60%;
+    height: 50px;
+}
+
+.preview{
+    width: 60%;
+    height: 25px;
+    background-color: white;
+    border-style: dotted;
+}
+
+.button{
+    width: 100px;
+    height: 30px;
+    background-color: pink;
+    border-color: white;
+    border-radius: 10%;
+    color: white;
+}
+
+.postbutton{
+    width: 150px;
+    height: 40px;
+    background-color: pink;
+    border-color: white;
+    border-radius: 10%;
+    color: white;
+}
