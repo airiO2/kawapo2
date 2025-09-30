@@ -8,12 +8,12 @@
 }
 
 .file {
-    position: absolute;
+  position: absolute;
   font-size: 0rem;
   max-width: 430px;
   width: 100%;
   height: 10rem;
-  
+
   border: black 0.1rem dashed;
   z-index: 100;
 }
@@ -21,7 +21,6 @@
 .filemix {
   position: relative;
   max-width: 430px;
-  width: 60%;
   height: 10rem;
   background-color: white;
 }
@@ -32,6 +31,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: pink;
+}
+
+.Question {
+  width: 60%;
+}
+
+.Question p {
+  text-align: center;
 }
 
 .Image {
