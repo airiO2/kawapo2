@@ -4,7 +4,6 @@ import { FileOutput } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 
-
 const Question = () => {
   const [preview, setPreview] = useState<string | null>(null);
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
