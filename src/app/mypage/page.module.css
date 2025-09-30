@@ -1,17 +1,14 @@
 .button{
     
-    
 }
 
-.buttona{
-     background-color: pink;
-    color: white;
-    width: 100px;
-    height: 30px;
-    border-radius: 20%;
-
-    display: flex;
-    text-align: center;
-    align-items: center;
-    
+.text{
+background-color: pink;
+width: 100px;
+height: 30px;
+color: white;
+border-radius: 20%;
+display: flex;
+text-align: center;
+justify-content: center;
 }
