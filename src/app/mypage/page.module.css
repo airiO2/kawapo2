@@ -19,4 +19,14 @@ margin-bottom: 20px;
     width: 50px;
     height: 50px;
     border-color: pink;
+    background-color: white;
+}
+
+.name{
+color: rgb(87, 25, 25);
+}
+
+.level{
+
+color: rgb(87, 25, 25);
 }
