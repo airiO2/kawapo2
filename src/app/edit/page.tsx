@@ -1,15 +1,12 @@
-import styles from "./page.module.css";
+import AccountForm from '@/component/ProfileEdit'
+import { createClient } from '@/utils/supabase/server'
 
-export default function edit() {
-  return <>
-  <p>アイコンを変更</p>
+export default async function Account() {
+    const supabase = await createClient()
 
-  <p>名前を変更</p>
-  <input type="text"></input>
-  <p>メールアドレスを変更</p>
-  <input type="text"></input>
-  <p>パスワードを変更</p>
-  <input type="text"></input>
-  <p className={styles.update2}><button className={styles.update} type="button">更新</button></p>
-  </>;
+    const {
+        data: { user },
+    } = await supabase.auth.getUser()
+
+    return <AccountForm user={user} />
 }

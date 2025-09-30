@@ -2,6 +2,7 @@ import React from "react";
 import { isContext } from "vm";
 import styles from "./index.module.css";
 import { ChevronRight } from "lucide-react";
+import { login } from './actions'
 
 interface IDformProps {
   text1: string;
@@ -12,23 +13,23 @@ interface IDformProps {
 
 const IDform = ({ text1, text2, text3, link }: IDformProps) => {
   return (
-    <div className={styles.IDform}>
+    <form className={styles.IDform}>
       <div className={styles.word}>
         <h1>ログイン</h1>
         <div className={styles.form}>
-          <p>{text1}</p>
-          <input type="text"></input>
-          <p>{text2}</p>
-          <input type="text"></input>
+          <label htmlFor="email">{text1}</label>
+          <input id="email" name="email" type="email" required/>
+          <label htmlFor="password">{text2}</label>
+          <input id="password" name="password" type="password" required/>
         </div>
       </div>
 
-      <button className={styles.button}>{text3}</button>
+      <button className={styles.button} formAction={login}>{text3}</button>
       <br></br>
       <a href={link} className={styles.link}>
         新規登録はこちら
       </a>
-    </div>
+    </form>
   );
 };
 
