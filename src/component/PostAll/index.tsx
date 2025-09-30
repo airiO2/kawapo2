@@ -1,8 +1,8 @@
 import styles from "./index.module.css";
-import PostHeader from "../Postheader";
+import PostHeader from "../PostHeader";
 import Postimage from "../PostImage";
 import PostText from "../Posttext";
-import PostHashtag from "../Posthashtag";
+import PostHashtag from "../PostHashtag";
 import { BetweenVerticalEnd } from "lucide-react";
 
 interface PostProps {
