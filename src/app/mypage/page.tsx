@@ -20,7 +20,8 @@ src={"globe.svg"}
 <h1>[なまえ]</h1>
 <p className={styles.text}><Link className={styles.butoon} href="/edit">編集</Link></p>
 
-
+<p>かわいいレベル</p>
+<div className={styles.preview}></div>
 
 
 
