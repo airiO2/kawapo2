@@ -1,0 +1,18 @@
+.update{
+background-color: pink;
+color: white;
+border-color: white;
+
+
+
+height: 30px;
+width: 100px;
+border-radius: 20%;
+
+}
+
+.update2{
+display: flex;
+text-align: center;
+align-items: center;
+}
