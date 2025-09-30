@@ -18,7 +18,7 @@ src={"globe.svg"}
 </Image>
 
 <h1>[なまえ]</h1>
-<p className={styles.buttona}><Link className={styles.butoon} href="/edit">編集</Link></p>
+<p className={styles.text}><Link className={styles.butoon} href="/edit">編集</Link></p>
 
 
 
