@@ -17,10 +17,10 @@ src={"globe.svg"}
 >
 </Image>
 
-<h1>[なまえ]</h1>
+<h1 className={styles.name}>[なまえ]</h1>
 <p className={styles.text}><Link className={styles.butoon} href="/edit">編集</Link></p>
 
-<p>かわいいレベル</p>
+<p className={styles.level}>かわいいレベル</p>
 <div className={styles.preview}></div>
 
 
