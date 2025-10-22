@@ -1,0 +1,32 @@
+.button{
+    
+}
+
+.text{
+background-color: pink;
+width: 100px;
+height: 30px;
+color: white;
+border-radius: 20%;
+display: flex;
+text-align: center;
+justify-content: center;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.preview{
+    width: 50px;
+    height: 50px;
+    border-color: pink;
+    background-color: white;
+}
+
+.name{
+color: rgb(87, 25, 25);
+}
+
+.level{
+
+color: rgb(87, 25, 25);
+}

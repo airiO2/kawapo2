@@ -13,7 +13,7 @@ export async function getProfile() {
 
   const { data: profileData, error } = await supabase
     .from("profiles")
-    .select("*, user_schools(school_id(name), grade)")
+    .select("*")
     .eq("id", user.id)
     .single();
 
