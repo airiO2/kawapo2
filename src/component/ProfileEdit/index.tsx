@@ -81,6 +81,7 @@ export default function AccountForm({ user }: { user: User | null }) {
           setAvatarUrl(url);
           updateProfile({ fullname, username, avatar_url: url });
         }}
+        isEdit={true}
       />
 
       <div>

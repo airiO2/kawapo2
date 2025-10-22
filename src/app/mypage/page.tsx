@@ -1,35 +1,13 @@
-import Image from "next/image";
-import styles from "./page.module.css"
-import { Globe } from "lucide-react";
-import Postimage from "@/component/PostImage";
-import Link from "next/link";
+import MyPageClient from '@/component/MyPageClient'
+import { createClient } from '@/utils/supabase/server'
 
-export default function mypage(){
-return(
-<>
+export default async function mypage() {
+    const supabase = await createClient()
 
-<Image 
-className={styles.image}
-height={100}
-width={100}
-alt="icon"
-src={"@/"}
->
-</Image>
+    const {
+        data: { user },
+    } = await supabase.auth.getUser()
 
-<h1 className={styles.name}>[なまえ]</h1>
-<p className={styles.text}><Link className={styles.butoon} href="/edit">編集</Link></p>
+    return <MyPageClient user={user} />
+}
 
-<p className={styles.level}>かわいいレベル</p>
-<div className={styles.preview}></div>
-
-
-
-
-</>
-
-
-);
-
-
-};
