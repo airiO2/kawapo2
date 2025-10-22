@@ -88,10 +88,10 @@ export default function AccountForm({ user }: { user: User | null }) {
         <input id="email" type="text" value={user?.email} disabled />
       </div>
 
-      <div>
+      {/* <div>
         <label htmlFor="password">パスワードを変更</label>
         <input id="password" type="password" value={user?.password}></input>
-      </div>
+      </div> */}
 
       <div>
         <label htmlFor="fullName">表示名を変更</label>

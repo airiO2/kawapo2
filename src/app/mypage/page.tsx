@@ -13,7 +13,7 @@ className={styles.image}
 height={100}
 width={100}
 alt="icon"
-src={"globe.svg"}
+src={"@/"}
 >
 </Image>
 
