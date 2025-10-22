@@ -9,7 +9,7 @@ export default function post() {
       <textarea className={styles.maintext}></textarea>
       <p>ハッシュタグ入力</p>
       <textarea className={styles.hashtag}></textarea>
-      <p className={styles.preview}></p>
+      
       <button className={styles.button} type="button">決定</button>
       <p className={styles.line}></p>
             <button className={styles.postbutton} type="button">投稿</button>
