@@ -11,7 +11,7 @@ export default function post() {
       <textarea className={styles.hashtag}></textarea>
       
       
-      <p className={styles.line}></p>
+    
             <button className={styles.postbutton} type="button">投稿</button>
     </>
   );
