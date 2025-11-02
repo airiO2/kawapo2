@@ -9,5 +9,6 @@ export default async function mypage() {
     } = await supabase.auth.getUser()
 
     return <MyPageClient user={user} />
+    
 }
 

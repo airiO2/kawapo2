@@ -1,14 +1,10 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
-import { createClient } from "@/utils/supabase/client";
-import Image from "next/image";
-import styles from "./styles.module.css";
-import { Globe } from "lucide-react";
-import Postimage from "@/component/PostImage";
-import Link from "next/link";
-import { getProfile } from "@/server/actions/profile";
 import Avatar from "@/component/Avatar";
+import { createClient } from "@/utils/supabase/client";
 import { type User } from "@supabase/supabase-js";
+import Link from "next/link";
+import { useCallback, useEffect, useState } from "react";
+import styles from "./styles.module.css";
 
 export default function MyPpage({ user }: { user: User | null }) {
   const supabase = createClient();

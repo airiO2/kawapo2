@@ -2,6 +2,8 @@
 
 import { createClient } from "@/utils/supabase/server";
 import { getUser } from "@/utils/supabase/actions";
+import { redirect } from "next/navigation";
+
 
 export async function posting(formData: FormData) {
     const supabase = await createClient();
@@ -60,6 +62,7 @@ export async function posting(formData: FormData) {
   for (const tag of tags) {
     const { data: tagData, error: tagError } = await supabase
       .from("tags")
+    //   supabaseにタグの情報を入れる↑↓
       .insert([
         {
           name: tag,
@@ -67,6 +70,7 @@ export async function posting(formData: FormData) {
     ])
       .select("id")
       .single();
+    //   ターミナルで出力して確認するためにconsole.logでtagDataを出力してる
     console.log(tagData);
     
     const { data: postTagData, error: postTagDataEroor } = await supabase
@@ -79,6 +83,7 @@ export async function posting(formData: FormData) {
       ]);
   }
       }
-  
+    //   全部の処理が終わった後に、ホームにリダイレクト（画面遷移）する。
+  redirect("/home");
   return;
 }

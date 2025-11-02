@@ -11,7 +11,7 @@ export default function Avatar({
   onUpload,
   isEdit = false,
 }: {
-  uid: string | null;
+  uid?: string | null;
   url: string | null;
   size: number;
   onUpload?: (url: string) => void;
