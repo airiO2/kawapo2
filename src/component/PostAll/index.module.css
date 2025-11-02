@@ -3,3 +3,8 @@ border-bottom:2px white solid;
 padding-bottom: 30px;
 margin-bottom: 10px;
 }
+
+.hashtag{
+  display: flex;
+  gap: 20px;
+}
