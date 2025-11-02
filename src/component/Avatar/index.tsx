@@ -18,7 +18,10 @@ export default function Avatar({
   isEdit?: boolean;
 }) {
   const supabase = createClient();
-  const [avatarUrl, setAvatarUrl] = useState<string | null>(url);
+  // nullにすることで、初期値が無くなる
+  // そしたら、アイコンの画像をダウンロードする前に、勝手に入らなくなる
+  // つまり、うまくアイコンの画像を表示できる↓
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
   const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
