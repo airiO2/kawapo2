@@ -4,10 +4,10 @@ import { posting } from "@/server/actions/posting";
 import { redirect } from "next/navigation";
 
 
-
 export default function post() {
   return (
     <form action={posting} className={styles.postform}>
+     
       <Question></Question>
       <p>本文入力</p>
       <textarea className={styles.maintext} name="text"></textarea>

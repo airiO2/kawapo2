@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 import Post from "@/component/PostAll";
 import { homeposting } from "@/server/actions/homeposting";
 import { PostType } from "@/type/post";
-
+import Title from "@/component/Title";
 
 // コンポーネントとかはexport default ”コンポーネント名”で作ってるからimportするときに｛｝なしでいい。
 // でも、関数名とか変数名は、export内で処理を書いてるから、｛｝で囲む。
@@ -17,8 +17,11 @@ export default async function homepage() {
   console.log(homeReview);
   return (
     <>
+    
+    <Title text={"CUTEST POINTS"}></Title> 
     {homeReview?.map((post: PostType) => (
-      <Post
+     
+     <Post
 
         key={post.id}
         postId={post?.id }
@@ -28,6 +31,8 @@ export default async function homepage() {
         text1={post?.text ?? "これはいぬです"}
         
       ></Post>
+      
+
 ))}
     </>
   );

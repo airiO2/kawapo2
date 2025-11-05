@@ -13,7 +13,7 @@ interface FooderProps {
 
 const Fooder = ({ link1, link2, link3 }: FooderProps) => {
   return (
-    <>
+    
       <div className={styles.Fooder}>
         <Link href={link1} className={styles.home}>
           <CirclePlus className={styles.CirclePlus}></CirclePlus>
@@ -27,7 +27,7 @@ const Fooder = ({ link1, link2, link3 }: FooderProps) => {
           <UsersRound className={styles.UnderRound}></UsersRound>
         </Link>
       </div>
-    </>
+    
   );
 };
 

@@ -43,11 +43,12 @@ export default function MyPpage({ user }: { user: User | null }) {
   useEffect(() => {
     getProfile();
   }, [user, getProfile]);
-  
+
   return (
     <>
-      <Avatar uid={user?.id ?? null} url={avatar_url} size={150} />
-
+      <div className={styles.icon}>
+        <Avatar uid={user?.id ?? null} url={avatar_url} size={150} />
+      </div>
       <h1 className={styles.name}>{fullname}</h1>
       <p className={styles.text}>
         <Link className={styles.butoon} href="/edit">

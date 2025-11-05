@@ -3,6 +3,11 @@
   background-color: pink;
   justify-content:space-around;
   height: 40px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 430px;
+  
  
 }
 
