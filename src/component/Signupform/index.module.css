@@ -1,0 +1,31 @@
+.IDform {
+  height: 260px;
+  width: 300px;
+  border: gray solid;
+  text-align: center;
+  border-radius: 50px;
+  display: flex-direction;
+  background-color: white;
+}
+
+.button {
+  height: 1.5rem;
+  width: 10.3rem;
+  background-color: pink;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.link {
+  color: blue;
+  align-items: center;
+  border-bottom: 1px solid blue;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}

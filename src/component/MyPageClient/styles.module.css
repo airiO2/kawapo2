@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap');
+
+
+.button{
+    
+}
+
+.text{
+background-color: pink;
+width: 100px;
+height: 30px;
+color: white;
+border-radius: 20%;
+display: flex;
+text-align: center;
+justify-content: center;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.preview{
+    width: 50px;
+    height: 50px;
+    border-color: pink;
+    background-color: white;
+    font-size: 20px;
+    color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Gravitas One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.name{
+color: rgb(87, 25, 25);
+}
+
+.level{
+;
+color: rgb(87, 25, 25);
+}
+
+.icon{
+    margin-top: 20px;
+}
+
+.level2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}

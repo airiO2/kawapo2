@@ -1,0 +1,20 @@
+.PostAll{
+ width: 80%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+  flex-direction: column;
+  border-bottom:2px white solid;
+padding-bottom: 30px;
+margin-bottom: 10px;
+margin-top: 10px;
+}
+
+.hashtag{
+  display: flex;
+  flex-wrap: wrap;
+
+
+
+  gap: 10px;
+}
