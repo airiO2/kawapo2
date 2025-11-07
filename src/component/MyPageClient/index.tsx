@@ -5,6 +5,7 @@ import { type User } from "@supabase/supabase-js";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import styles from "./styles.module.css";
+import Postimage from "../PostImage";
 
 export default function MyPpage({ user }: { user: User | null }) {
   const supabase = createClient();
@@ -12,6 +13,9 @@ export default function MyPpage({ user }: { user: User | null }) {
   const [fullname, setFullname] = useState<string | null>(null);
   const [username, setUsername] = useState<string | null>(null);
   const [avatar_url, setAvatarUrl] = useState<string | null>(null);
+  const [image_url, setImageUrl] = useState<{img: string}[]>([]);
+
+// setAvatarUrlでavatar_urlを更新しているので、Avatarコンポーネントに正しいURLが渡される。
 
   const getProfile = useCallback(async () => {
     try {
@@ -40,9 +44,46 @@ export default function MyPpage({ user }: { user: User | null }) {
     }
   }, [user, supabase]);
 
-  useEffect(() => {
+  
+
+  const getPostImage = useCallback(async () => {
+    try {
+      setLoading(true);
+
+      const { data, error, status } = await supabase
+        .from("posts")
+        .select(`img`)
+        .eq("user_id", user?.id);
+        // "user_id"は、投稿テーブルの中のuser_idというカラム名を指している。
+      
+
+      console.log("Post Image Data:", data);
+
+      if (error && status !== 406) {
+         console.log(error);
+        throw error;
+      }
+      
+      if (data) {
+        setImageUrl(data);
+      }
+
+    } catch (error) {
+      alert("Error loading post image!");
+    } finally {
+      setLoading(false);
+    }
+  }, [user, supabase]);
+
+  useEffect(() =>{
+    
+    getPostImage();
     getProfile();
-  }, [user, getProfile]);
+  console.log("URL", image_url); 
+  },[user]);
+
+
+
 
   return (
     <>
@@ -58,6 +99,9 @@ export default function MyPpage({ user }: { user: User | null }) {
 
       <p className={styles.level}>かわいいレベル</p>
       <div className={styles.preview}></div>
+      {image_url.map((imageObj, index) => (
+        <Postimage key={index} link={imageObj.img} tate={100} yoko={100} />
+      ))}
     </>
   );
 }
