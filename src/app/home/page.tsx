@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+
 import Post from "@/component/PostAll";
 import { homeposting } from "@/server/actions/homeposting";
 import { PostType } from "@/type/post";

@@ -1,9 +1,7 @@
-import styles from "./page.module.css";
+
 import Post from "@/component/PostAll";
-import { homeposting, mypageuniqueposting } from "@/server/actions/homeposting";
-import { PostType } from "@/type/post";
-import Title from "@/component/Title";
-import { promises } from "dns";
+import { mypageuniqueposting } from "@/server/actions/homeposting";
+
 
 // コンポーネントとかはexport default ”コンポーネント名”で作ってるからimportするときに｛｝なしでいい。
 // でも、関数名とか変数名は、export内で処理を書いてるから、｛｝で囲む。

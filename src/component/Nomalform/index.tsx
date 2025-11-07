@@ -1,6 +1,3 @@
-import React from "react";
-import { isContext } from "vm";
-import styles from "./index.module.css";
 
 interface NomalformProps {
   text: string;

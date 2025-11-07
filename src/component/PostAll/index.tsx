@@ -1,10 +1,9 @@
-import styles from "./index.module.css";
+import { hometag } from "@/server/actions/hometag";
+import PostHashtag from "../PostHashtag";
 import PostHeader from "../PostHeader";
 import Postimage from "../PostImage";
 import PostText from "../Posttext";
-import PostHashtag from "../PostHashtag";
-import { BetweenVerticalEnd } from "lucide-react";
-import { hometag } from "@/server/actions/hometag";
+import styles from "./index.module.css";
 
 interface PostProps {
   postId: number;
@@ -26,8 +25,16 @@ const Post = async ({ postId, icon, image, text1, name }: PostProps) => {
       <PostText text={text1}></PostText>
       <div className={styles.hashtag}>
 
-      {taglist?.map((tag) => (
-        <PostHashtag text={tag.tag_id.name}></PostHashtag>
+      {taglist?.map((tag, index) => (
+        <>
+          {Array.isArray(tag.tag_id) ? (
+            tag.tag_id.map((t, i) => (
+              <PostHashtag text={t.name} key={`${index}-${i}`}></PostHashtag>
+            ))
+          ) : (
+            <PostHashtag text={((tag.tag_id as { name?: string } | null)?.name) ?? ""} key={index}></PostHashtag>
+          )}
+        </>
       ))}
       </div>
     </div>

@@ -1,8 +1,7 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { type User } from "@supabase/supabase-js";
-import styles from "./page.module.css";
+import { useCallback, useEffect, useState } from "react";
 import Avatar from "../Avatar";
 // ...
 
@@ -35,6 +34,7 @@ export default function AccountForm({ user }: { user: User | null }) {
       }
     } catch (error) {
       alert("Error loading user data!");
+      console.log(error);
     } finally {
       setLoading(false);
     }
@@ -64,8 +64,10 @@ export default function AccountForm({ user }: { user: User | null }) {
       });
       if (error) throw error;
       alert("Profile updated!");
+      console.log(error);
     } catch (error) {
       alert("Error updating the data!");
+      console.log(error);
     } finally {
       setLoading(false);
     }

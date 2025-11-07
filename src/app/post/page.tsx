@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import Question from "@/component/Imagepreview";
 import { posting } from "@/server/actions/posting";
-import { redirect } from "next/navigation";
+
 
 
 export default function post() {

@@ -1,12 +1,11 @@
 "use server"
 
-import post from "@/app/post/page";
 import { createClient } from "@/utils/supabase/server";
 
 export async function hometag(postId: number){
     const supabase = await createClient();
 
-    const {data: tagData, error} = await supabase
+    const {data: tagData} = await supabase
     .from("post_tags")
     .select("tag_id(name)")
     .eq("post_id",  postId)

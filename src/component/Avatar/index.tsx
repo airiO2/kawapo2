@@ -71,6 +71,7 @@ export default function Avatar({
       }
     } catch (error) {
       alert("Error uploading avatar!");
+      console.log(error);
     } finally {
       setUploading(false);
     }

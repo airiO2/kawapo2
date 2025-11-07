@@ -1,8 +1,5 @@
-import React from "react";
-import { isContext } from "vm";
+import { login } from './actions';
 import styles from "./index.module.css";
-import { ChevronRight } from "lucide-react";
-import { login } from './actions'
 
 interface IDformProps {
   text1: string;

@@ -1,6 +1,5 @@
 import Signupform from "@/component/Signupform";
 import styles from "./page.module.css";
-import Header from "@/component/Header";
 
 
 export default function SignupPage() {

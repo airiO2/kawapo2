@@ -9,9 +9,8 @@ import Postimage from "../PostImage";
 
 export default function MyPpage({ user }: { user: User | null }) {
   const supabase = createClient();
-  const [loading, setLoading] = useState(true);
   const [fullname, setFullname] = useState<string | null>(null);
-  const [username, setUsername] = useState<string | null>(null);
+  
   const [avatar_url, setAvatarUrl] = useState<string | null>(null);
   const [image_url, setImageUrl] = useState<{img: string, id: number}[]>([]);
 
@@ -19,7 +18,6 @@ export default function MyPpage({ user }: { user: User | null }) {
 
   const getProfile = useCallback(async () => {
     try {
-      setLoading(true);
 
       const { data, error, status } = await supabase
         .from("profiles")
@@ -34,13 +32,12 @@ export default function MyPpage({ user }: { user: User | null }) {
 
       if (data) {
         setFullname(data.full_name);
-        setUsername(data.username);
         setAvatarUrl(data.avatar_url);
       }
     } catch (error) {
       alert("Error loading user data!");
+      console.log(error);
     } finally {
-      setLoading(false);
     }
   }, [user, supabase]);
 
@@ -48,7 +45,6 @@ export default function MyPpage({ user }: { user: User | null }) {
 
   const getPostImage = useCallback(async () => {
     try {
-      setLoading(true);
 
       const { data, error, status } = await supabase
         .from("posts")
@@ -71,8 +67,8 @@ export default function MyPpage({ user }: { user: User | null }) {
 
     } catch (error) {
       alert("Error loading post image!");
+      console.log(error);
     } finally {
-      setLoading(false);
     }
   }, [user, supabase]);
 
@@ -80,8 +76,7 @@ export default function MyPpage({ user }: { user: User | null }) {
     
     getPostImage();
     getProfile();
-  console.log("URL", image_url); 
-  },[user]);
+  },[user, getPostImage, getProfile]);
 
 
 
@@ -104,7 +99,7 @@ export default function MyPpage({ user }: { user: User | null }) {
       </div>
       <div className={styles.level2}>
       {image_url.map((imageObj, index) => (
-      <Link href={`/mypage/${imageObj.id}`}> <Postimage key={index} link={imageObj.img} tate={100} yoko={100} /></Link>
+      <Link href={`/mypage/${imageObj.id}`} key={index}> <Postimage  link={imageObj.img} tate={100} yoko={100} /></Link>
       ))
       }
       </div>

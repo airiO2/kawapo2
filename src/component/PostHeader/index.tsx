@@ -1,6 +1,5 @@
 import Avatar from "../Avatar";
 import styles from "./index.module.css";
-import Image from "next/image";
 
 interface headerProps {
   icon: string;

@@ -1,7 +1,7 @@
 import IDform from "@/component/IDform";
 import styles from "./page.module.css";
 
-interface LoginProps {}
+
 
 const Login = () => {
   return (

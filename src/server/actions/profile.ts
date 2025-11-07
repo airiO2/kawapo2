@@ -1,7 +1,7 @@
 "use server";
 
-import { createClient } from "@/utils/supabase/server";
 import { getUser } from "@/utils/supabase/actions";
+import { createClient } from "@/utils/supabase/server";
 
 export async function getProfile() {
   const supabase = await createClient();

@@ -1,7 +1,7 @@
 "use server";
 
-import { createClient } from "@/utils/supabase/server";
 import { getUser } from "@/utils/supabase/actions";
+import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 
 
@@ -37,9 +37,6 @@ export async function posting(formData: FormData) {
           // 保存するときのファイル名を決めてる↓
         const fileName = `${user.id}_${timestamp}.${extension}`;
         // supabaseのstorageに画像をアップロードしてる↓
-        const { data: uploadData, error: uploadError } = await supabase.storage
-          .from("posts")
-          .upload(fileName, img);
     
          
           const { data: postData, error: postError } = await supabase
@@ -56,7 +53,10 @@ export async function posting(formData: FormData) {
             // 一個でいいってこと。今回はいらんけど複数あるカラムの時はいるのでかいておく
             .single();
       console.log(postData);
-      
+      if (postError) {
+        console.error("Error inserting post:", postError);
+        throw postError;
+      }
       
 
   for (const tag of tags) {
@@ -72,18 +72,12 @@ export async function posting(formData: FormData) {
       .single();
     //   ターミナルで出力して確認するためにconsole.logでtagDataを出力してる
     console.log(tagData);
+    if (tagError) {
+      console.error("Error inserting tag:", tagError);
+      throw tagError;
+    }
     
-    const { data: postTagData, error: postTagDataEroor } = await supabase
-      .from("post_tags")
-      .insert([
-        {
-          post_id: postData?.id,
-          tag_id: tagData?.id,
-        },
-      ]);
-  }
-      }
     //   全部の処理が終わった後に、ホームにリダイレクト（画面遷移）する。
   redirect("/home");
-  return;
-}
+  }
+      }}

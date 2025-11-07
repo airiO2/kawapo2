@@ -1,6 +1,6 @@
 import MyPageClient from '@/component/MyPageClient'
 import { createClient } from '@/utils/supabase/server'
-import Postimage from '@/component/PostImage'
+
 
 
 export default async function mypage() {

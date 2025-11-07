@@ -1,8 +1,8 @@
 "use client";
-import styles from "./index.module.css";
 import { FileOutput } from "lucide-react";
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
+import styles from "./index.module.css";
 
 const Question = () => {
   const [preview, setPreview] = useState<string | null>(null);
