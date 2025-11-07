@@ -32,6 +32,7 @@ const Postimage = ({ link, tate, yoko }: PostimageProps) => {
 
   return (
     <>
+    
       <Image
         className={styles.Image}
         width={yoko}

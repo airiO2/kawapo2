@@ -13,7 +13,7 @@ export default function MyPpage({ user }: { user: User | null }) {
   const [fullname, setFullname] = useState<string | null>(null);
   const [username, setUsername] = useState<string | null>(null);
   const [avatar_url, setAvatarUrl] = useState<string | null>(null);
-  const [image_url, setImageUrl] = useState<{img: string}[]>([]);
+  const [image_url, setImageUrl] = useState<{img: string, id: number}[]>([]);
 
 // setAvatarUrlでavatar_urlを更新しているので、Avatarコンポーネントに正しいURLが渡される。
 
@@ -52,7 +52,7 @@ export default function MyPpage({ user }: { user: User | null }) {
 
       const { data, error, status } = await supabase
         .from("posts")
-        .select(`img`)
+        .select(`img, id`)
         .eq("user_id", user?.id);
         // "user_id"は、投稿テーブルの中のuser_idというカラム名を指している。
       
@@ -66,6 +66,7 @@ export default function MyPpage({ user }: { user: User | null }) {
       
       if (data) {
         setImageUrl(data);
+        // setImageUrlは、ImageUrlをsetする変数！
       }
 
     } catch (error) {
@@ -98,10 +99,15 @@ export default function MyPpage({ user }: { user: User | null }) {
       </p>
 
       <p className={styles.level}>かわいいレベル</p>
-      <div className={styles.preview}></div>
+      <div className={styles.preview}>
+        {image_url.length}
+      </div>
+      <div className={styles.level2}>
       {image_url.map((imageObj, index) => (
-        <Postimage key={index} link={imageObj.img} tate={100} yoko={100} />
-      ))}
+      <Link href={`/mypage/${imageObj.id}`}> <Postimage key={index} link={imageObj.img} tate={100} yoko={100} /></Link>
+      ))
+      }
+      </div>
     </>
   );
 }

@@ -5,7 +5,7 @@
    color: #fff;
    height: 40px;
    width: 300px;
-   
+   margin-top: 10px;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -18,4 +18,5 @@
    font-family: "Gravitas One", serif;
   font-weight: 400;
   font-style: normal;
+  
 }
