@@ -14,10 +14,10 @@ const HOME = () => {
       <Link href="/login">
         <Image
           className={styles.Image}
-          width={300}
-          height={300}
+          height={105.6}
+          width={283.2}
           alt="LOGO"
-          src={"globe.svg"}
+          src={"/KAWAPO.png"}
         ></Image>
       </Link>
       </div>

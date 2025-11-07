@@ -9,7 +9,7 @@ link: string;
 const Header=({link}:HeaderProps)=>{
     return(
         <>
-        <p className={styles.Header}><Link href="/home"><ArrowBigLeft className={styles.Arrow}></ArrowBigLeft></Link></p>
+        <p className={styles.Header}><Link href="/.."><ArrowBigLeft className={styles.Arrow}></ArrowBigLeft></Link></p>
         </>
     );
 }

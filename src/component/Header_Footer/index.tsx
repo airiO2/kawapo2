@@ -14,7 +14,7 @@ return(
     <Header></Header>
    
 <main className={styles.main}>{children}</main>
- <Fooder link1="/post" link2="/mypage"></Fooder>
+ <Fooder link1="/post" link2="/mypage" link3="/home"></Fooder>
 </>
 );
 }

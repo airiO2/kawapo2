@@ -21,6 +21,8 @@ const Question = () => {
           <input
             className={styles.file}
             type="file"
+            id="img"
+            name="img"
             onChange={handleFileChange}
           ></input>
           {preview && (
